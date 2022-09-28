@@ -7,7 +7,7 @@ A [code kata](http://codekata.com/kata/codekata-how-it-started/) is a coding exe
 
 The aim of this kata is to learn how to put an existing code base under unit tests and then refactor it in small steps, as opposed to solving the problem in a re-write from scratch.
 
-The [problem statement]() of this kata reads a lot like a typical scenario one would encounter in a Salesforce org, and the existing code reminds me of many poorly implemented classes I've encountered in various orgs (some of which I may or may not have written). It seems emminently suited for developers wanting to expand their Apex skills, and so this is my Salesforce version of the kata.
+The [problem statement](https://github.com/stephanspiegel/apex-gilded-rose-kata/blob/main/GildedRoseRequirements.txt) of this kata reads a lot like a typical scenario one would encounter in a Salesforce org, and the existing code reminds me of many poorly implemented classes I've encountered in various orgs (some of which I may or may not have written). It seems particularly suited for developers wanting to expand their Apex skills, and so this is my Salesforce version of the kata.
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -44,8 +44,9 @@ If you don't have your Dev Hub configured as a default, you may need to run this
 
 Now the fun begins!
 
+<!-- SUGGESTED STEPS -->
 ## Suggested steps:
 
-1. This kata provides one unit test that doesn't pass. Make it pass, then add more unit tests to cover all [requirements]() except for the new functionality.
+1. This kata provides one unit test that doesn't pass. Make it pass, then add more unit tests to cover all [requirements](https://github.com/stephanspiegel/apex-gilded-rose-kata/blob/main/GildedRoseRequirements.txt) except for the new functionality.
 2. Taking small steps, refactor the existing code. Make sure the unit tests continue to pass.
 3. Implement the new functionality, along with unit tests to cover it.
