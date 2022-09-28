@@ -1,18 +1,51 @@
-# Salesforce DX Project: Next Steps
+# Gilded Rose Refactoring Kata for Salesforce Apex
 
-Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
+<!-- ABOUT THE PROJECT -->
+## What is this?
 
-## How Do You Plan to Deploy Your Changes?
+A [code kata](http://codekata.com/kata/codekata-how-it-started/) is a coding exercise with a focus on learning new skills (as opposed to solving a specific problem). The Gilded Rose Refactoring Kata started as an [ exercise in C# ](https://github.com/NotMyself/GildedRose), and has been [ported to many other programming languages](https://github.com/emilybache/GildedRose-Refactoring-Kata). For more on the history of this kata, see the [Readme for Emily Bache's project](https://github.com/emilybache/GildedRose-Refactoring-Kata#readme).
 
-Do you want to deploy a set of changes, or create a self-contained application? Choose a [development model](https://developer.salesforce.com/tools/vscode/en/user-guide/development-models).
+The aim of this kata is to learn how to put an existing code base under unit tests and then refactor it in small steps, as opposed to solving the problem in a re-write from scratch.
 
-## Configure Your Salesforce DX Project
+The [problem statement]() of this kata reads a lot like a typical scenario one would encounter in a Salesforce org, and the existing code reminds me of many poorly implemented classes I've encountered in various orgs (some of which I may or may not have written). It seems emminently suited for developers wanting to expand their Apex skills, and so this is my Salesforce version of the kata.
 
-The `sfdx-project.json` file contains useful configuration information for your project. See [Salesforce DX Project Configuration](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_config.htm) in the _Salesforce DX Developer Guide_ for details about this file.
+<!-- GETTING STARTED -->
+## Getting Started
 
-## Read All About It
+You'll most likely want to complete this exercise in a scratch org.
 
-- [Salesforce Extensions Documentation](https://developer.salesforce.com/tools/vscode/)
-- [Salesforce CLI Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm)
-- [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_intro.htm)
-- [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm)
+### Prerequisites
+
+* The [sfdx cli](https://developer.salesforce.com/tools/sfdxcli)
+* An org with Dev Hub enabled
+* git
+
+### Project setup
+1. Clone the repository
+```sh
+    git clone https://github.com/stephanspiegel/apex-gilded-rose-kata.git
+```
+2. Change into project directory
+```sh
+    cd apex-gilded-rose-kata
+```
+3. Spin up a scratch org
+```sh
+    sfdx force:org:create --definitionfile config/project-scratch-def.json --durationdays 30 --setalias gilded-rose -s
+```
+If you don't have your Dev Hub configured as a default, you may need to run this first:
+```sh
+    sfdx config:set defaultdevhubusername=[yourDevHubAlias]
+```
+4. Push the code 
+```sh
+    sfdx force:source:push
+```
+
+Now the fun begins!
+
+## Suggested steps:
+
+1. This kata provides one unit test that doesn't pass. Make it pass, then add more unit tests to cover all [requirements]() except for the new functionality.
+2. Taking small steps, refactor the existing code. Make sure the unit tests continue to pass.
+3. Implement the new functionality, along with unit tests to cover it.
